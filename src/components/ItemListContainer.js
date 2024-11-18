@@ -15,12 +15,12 @@ const ItemListContainer = ({ mensaje }) => {
         const fetchData = new Promise((resolve) => {
             setTimeout(() => {
                 const mockProductos = [
-                    { id: 1, categoria: 'Color unico', nombre: 'Producto 1', imagen: '/images/colorUnico1.jpeg', descripcion: 'Pintura roja de alta calidad, ideal para interiores.' },
-                    { id: 2, categoria: 'Color unico', nombre: 'Producto 2', imagen: '/images/colorUnico2.jpeg', descripcion: 'Pintura roja de alta calidad, ideal para interiores.' },
-                    { id: 3, categoria: 'Colores varios', nombre: 'Producto 1', imagen: '/images/colorVario1.jpeg', descripcion: 'Pintura roja de alta calidad, ideal para interiores.' },
-                    { id: 4, categoria: 'Colores varios', nombre: 'Producto 2', imagen: '/images/colorVario2.jpeg', descripcion: 'Pintura roja de alta calidad, ideal para interiores.' },
-                    { id: 5, categoria: 'Pintura total', nombre: 'Producto 1', imagen: '/images/pintura1.jpeg', descripcion: 'Pintura roja de alta calidad, ideal para interiores.' },
-                    { id: 6, categoria: 'Pintura total', nombre: 'Producto 2', imagen: '/images/pintura2.jpeg', descripcion: 'Pintura roja de alta calidad, ideal para interiores.' },
+                    { id: 1, categoria: 'Color unico', nombre: 'Producto 1', imagen: '/images/colorUnico1.jpeg', descripcion: 'PPLA Azul, 0.12 mm de definición' },
+                    { id: 2, categoria: 'Color unico', nombre: 'Producto 2', imagen: '/images/colorUnico2.jpeg', descripcion: 'PLA Azul, 0.12 mm de definición' },
+                    { id: 3, categoria: 'Colores varios', nombre: 'Producto 1', imagen: '/images/colorVario1.jpeg', descripcion: 'PLA a elegir para base y figura, 0.12mm' },
+                    { id: 4, categoria: 'Colores varios', nombre: 'Producto 2', imagen: '/images/colorVario2.jpeg', descripcion: 'PLA a elegir para base y figura, 0.12mm' },
+                    { id: 5, categoria: 'Pintura total', nombre: 'Producto 1', imagen: '/images/pintura1.jpeg', descripcion: 'PLA a elegir para base y figura, partes a elegir para pintar y nivel de calidad (sombras, luces, detalles), 0.12mm y 0.08mm' },
+                    { id: 6, categoria: 'Pintura total', nombre: 'Producto 2', imagen: '/images/pintura2.jpeg', descripcion: 'PLA a elegir para base y figura, partes a elegir para pintar y nivel de calidad (sombras, luces, detalles), 0.12mm y 0.08mm' },
                 ];
 
                 const normalizedCategoryId = categoryId?.toLowerCase().replace(/%20/g, ' ');
