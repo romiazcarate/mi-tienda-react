@@ -11,7 +11,7 @@ const App = () => {
         <Router>
             <NavBar />
             <Routes>
-                <Route path="/" element={<ItemListContainer mensaje="Bienvenidos" />} />
+                <Route path="/" element={<ItemListContainer mensaje="Bienvenidos a Polymera" />} />
                 <Route path="/category/:categoryId" element={<ItemListContainer mensaje="Categoría" />} />
                 <Route path="/item/:id" element={<ItemDetailContainer />} />
                 <Route path="*" element={<h1>404 - Página no encontrada</h1>} />
