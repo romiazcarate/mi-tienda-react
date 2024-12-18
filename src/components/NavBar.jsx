@@ -1,29 +1,36 @@
-import CartWidget from './CartWidget';
+import React, { useContext } from "react";
+import { CartContext } from "../context/CartContext";
+import { Link, NavLink } from "react-router-dom";
 import './navBar.css';
-import { Link } from 'react-router-dom';
-
-const categories = ['Color unico', 'Colores varios', 'Pintura total'];
-
 
 const NavBar = () => {
+    const { carrito } = useContext(CartContext);
+
+    // Calcular la cantidad total de productos en el carrito
+    const totalProductos = carrito.reduce((total, item) => total + item.cantidad, 0);
+
     return (
         <nav className="navbar">
-            <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
-                <h1>Mi Tienda</h1>
-            </Link>            
-            <ul className="nav-links">
-                {categories.map((category) => (
-                    <li key={category}> 
-                        <Link to={`/category/${category.toLowerCase()}`}>
-                            {category}
-                        </Link>
-                    </li>
-                ))}
-                <li><Link to="#contacto">Contacto</Link></li>
+            <Link className="navbar-brand" to="/">Mi Tienda</Link>
+            <ul className="navbar-nav">
+                <li className="nav-item">
+                    <Link to="/category/Color unico">Color único</Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/category/Colores varios">Colores varios</Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/category/Pintura total">Pintura total</Link>
+                </li>
+                <li className="nav-item">
+                    <Link to="/contacto">Contacto</Link>
+                </li>
             </ul>
-            <CartWidget />
+            <Link to="/cart" className="cart-icon">
+                🛒 {totalProductos}
+            </Link>
         </nav>
     );
 };
 
-export default NavBar
+export default NavBar;

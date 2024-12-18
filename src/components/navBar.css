@@ -1,32 +1,51 @@
-/* components/NavBar.css */
+/* Navbar general */
 .navbar {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #11121b;
+    justify-content: space-between; /* Distribuye espacio entre elementos */
+    align-items: center; /* Centra verticalmente */
+    background-color: #2b2d42;
     padding: 10px 20px;
-    color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin: 0 15px;
-}
-
-.nav-links a {
-    color: white;
+/* Estilo del título */
+.navbar-brand {
+    color: #E9A051 !important;
+    font-size: 1.8rem;
     text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+    margin-right: auto; /* Empuja todo hacia la derecha */
 }
 
-.nav-links a:hover {
-    text-decoration: underline;
+/* Lista de navegación */
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 20px; /* Espacio entre los elementos */
 }
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
+.nav-item a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-item a:hover {
+    color: #E9A051;
+}
+
+/* Estilo del carrito */
+.cart-icon {
+    color: #E9A051;
+    font-size: 1.5rem;
+    margin-left: auto; /* Lo empuja a la derecha */
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.cart-icon:hover {
+    color: #ffffff;
 }

@@ -1,0 +1,43 @@
+/* Estilo general de los botones */
+.card button, .card a {
+    display: inline-block;
+    width: 45%;
+    margin: 5px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none; /* Para quitar el subrayado en los enlaces */
+    color: white;
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Estilo botón "Agregar al carrito" */
+.btn-primary {
+    background-color: #007bff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Estilo botón "Ver Detalles" */
+.btn-info {
+    background-color: #17a2b8;
+}
+
+.btn-info:hover {
+    background-color: #117a8b;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Alineación de los botones */
+.card .card-body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
