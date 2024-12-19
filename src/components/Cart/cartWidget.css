@@ -9,7 +9,7 @@
     width: 30px; 
     height: auto;
     margin-right: 5px;
-    filter: brightness(0) invert(1); /* Esto convierte el negro en blanco */
+    filter: brightness(0) invert(1); 
 }
 
 .cart-widget span {

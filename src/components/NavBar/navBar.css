@@ -10,7 +10,7 @@
 
 /* Estilo del título */
 .navbar-brand {
-    color: #E9A051 !important;
+    color: #e02b2b !important;
     font-size: 1.8rem;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
@@ -18,14 +18,6 @@
 }
 
 /* Lista de navegación */
-.navbar-nav {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    gap: 20px; /* Espacio entre los elementos */
-}
-
 .nav-item a {
     color: #ffffff;
     text-decoration: none;
@@ -38,13 +30,6 @@
 }
 
 /* Estilo del carrito */
-.cart-icon {
-    color: #E9A051;
-    font-size: 1.5rem;
-    margin-left: auto; /* Lo empuja a la derecha */
-    text-decoration: none;
-    transition: color 0.3s;
-}
 
 .cart-icon:hover {
     color: #ffffff;

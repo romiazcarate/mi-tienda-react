@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import NavBar from './components/NavBar';
-import ItemListContainer from './components/ItemListContainer';
-import ItemDetailContainer from './components/ItemDetailContainer';
-import Cart from './components/Cart';
-import CheckoutForm from './components/CheckoutForm';
+import NavBar from './components/NavBar/NavBar';
+import ItemListContainer from './components/Item/ItemListContainer';
+import ItemDetailContainer from './components/Item/ItemDetailContainer';
+import Cart from './components/Cart/Cart';
+import CheckoutForm from './components/Checkout/CheckoutForm';
 import CartProvider from './context/CartContext';
 
 const App = () => {

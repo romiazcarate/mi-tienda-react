@@ -1,26 +1,42 @@
 import React, { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { CartContext } from "../../context/CartContext";
 import { doc, updateDoc } from "firebase/firestore";
-import { db } from "../firebaseConfig";
+import { db } from "../../firebaseConfig";
 import { Link } from "react-router-dom"; 
 import './item.css';
 
 
 const Item = ({ producto }) => {
-  const { agregarAlCarrito } = useContext(CartContext);
-
+  const { agregarAlCarrito,carrito } = useContext(CartContext)
+  // console.log(CartContext)
   const handleAgregarCarrito = async () => {
-    if (producto.stock > 0) {
-      // Actualizar stock en Firestore
-      const productoRef = doc(db, "productos", producto.id);
-      await updateDoc(productoRef, { stock: producto.stock - 1 });
-
-      // Agregar al carrito
-      agregarAlCarrito({ ...producto, cantidad: 1 });
+    let productoAgregar
+  
+    
+    const itemExistente = carrito.find((item) => item.id === producto.id)
+  
+    if (itemExistente) {
+      
+      productoAgregar = itemExistente;
+      console.log("El producto ya está en el carrito:", productoAgregar)
     } else {
-      alert("Producto sin stock disponible.");
+      
+      productoAgregar = { ...producto, cantidad: 1 }
+      console.log("Producto a agregar:", productoAgregar)
+    }
+  
+    
+    const totalCantidadEnCarrito = itemExistente ? itemExistente.cantidad : 0
+  
+    if (producto.stock - totalCantidadEnCarrito > 0) {
+      // Agregar al carrito
+      agregarAlCarrito({ ...producto, cantidad: 1 })
+      console.log("Producto agregado al carrito.")
+    } else {
+      alert("Producto sin stock disponible.")
     }
   };
+  
 
   return (
     <div className="card h-100 text-center">
@@ -28,7 +44,7 @@ const Item = ({ producto }) => {
         src={producto.image}
         className="card-img-top"
         alt={producto.title}
-        style={{ height: "200px", objectFit: "cover" }}
+        style={{ height: "300px", objectFit: "contain" }}
       />
       <div className="card-body">
         <h5 className="card-title">{producto.title}</h5>
@@ -43,7 +59,7 @@ const Item = ({ producto }) => {
         </Link>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default Item;

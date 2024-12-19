@@ -7,7 +7,7 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    text-decoration: none; /* Para quitar el subrayado en los enlaces */
+    text-decoration: none; 
     color: white;
     font-weight: bold;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
